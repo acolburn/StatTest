@@ -15,7 +15,7 @@ uses
   Data.Bind.EngExt, FMX.Bind.DBEngExt, Data.Bind.Components, FMX.Layouts,
   FMX.Bind.Navigator, Data.Bind.Grid, FMX.Controls.Presentation, FMX.ScrollBox,
   FMX.Grid, Data.Bind.DBScope, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, FMX.StdCtrls, FMX.WebBrowser;
+  FireDAC.Comp.Client, FMX.StdCtrls, FMX.WebBrowser, FireDAC.Comp.UI, System.IOUtils;
 
 type
   TForm2 = class(TForm)
@@ -47,6 +47,8 @@ type
     StringGrid1: TStringGrid;
     LinkGridToDataSourceBindSourceDB12: TLinkGridToDataSource;
     FDQueryDisplayDescription: TFDQuery;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     procedure FormCreate(Sender: TObject);
     procedure ContinuousYes(Sender: TObject);
     procedure ContinuousNo(Sender: TObject);
@@ -65,6 +67,7 @@ type
     procedure CovariatesDontKnow(Sender: TObject);
     procedure StringGrid1SelectCell(Sender: TObject; const ACol, ARow: Integer;
       var CanSelect: Boolean);
+    procedure FDConnection1BeforeConnect(Sender: TObject);
 //    procedure GridBindSourceDB1SelectCell(Sender: TObject; const ACol,
 //      ARow: Integer; var CanSelect: Boolean);
   private
@@ -162,6 +165,13 @@ begin
     s:=FDQueryDisplayDescription.FieldByName('description').AsString;
     WebBrowser1.LoadFromStrings(s,'');
   end;
+end;
+
+procedure TForm2.FDConnection1BeforeConnect(Sender: TObject);
+begin
+  {$IF DEFINED(iOS) OR DEFINED(Android)}
+  FDConnection1.Params.Values['Database']:=TPath.Combine(TPath.GetDocumentsPath,'Stats.db');
+  {$ENDIF}
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);
