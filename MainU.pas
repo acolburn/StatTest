@@ -47,6 +47,7 @@ type
     StringGrid1: TStringGrid;
     LinkGridToDataSourceBindSourceDB12: TLinkGridToDataSource;
     FDConnectionDisplayDescription: TFDConnection;
+    FDQueryDisplayDescription: TFDQuery;
     procedure FormCreate(Sender: TObject);
     procedure ContinuousYes(Sender: TObject);
     procedure ContinuousNo(Sender: TObject);
@@ -151,23 +152,17 @@ procedure TForm2.StringGrid1SelectCell(Sender: TObject; const ACol,
   ARow: Integer; var CanSelect: Boolean);
   var
     query:string;
-    parameter:string;
-    results:TDataSet;
+    sParameter:string;
     s:string;
 begin
   if ARow>-1 then
   begin
-    parameter:=StringGrid1.Cells[ACol,ARow];
-    query:='select description from Tests where "test-name"='+QuotedStr(parameter);
-    try
-      FDConnectionDisplayDescription.ExecSQL(query,nil,results);
-    except on E: Exception do showmessage('Exception raised with message: '+E.Message);
-    end;
-    if results.RecordCount=1 then
-    begin
-      s:=results.FieldByName('description').AsString;
-      WebBrowser1.LoadFromStrings(s,'');
-    end;
+    sParameter:=StringGrid1.Cells[ACol,ARow];
+    FDQueryDisplayDescription.SQL.Text:='SELECT description FROM Tests WHERE "test-name"=:aParameter';
+    FDQueryDisplayDescription.ParamByName('aParameter').AsString:=sParameter;
+    FDQueryDisplayDescription.Open();
+    s:=FDQueryDisplayDescription.FieldByName('description').AsString;
+    WebBrowser1.LoadFromStrings(s,'');
   end;
 end;
 

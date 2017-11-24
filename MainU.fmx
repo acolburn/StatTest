@@ -258,4 +258,9 @@ object Form2: TForm2
     Left = 464
     Top = 288
   end
+  object FDQueryDisplayDescription: TFDQuery
+    Connection = FDConnection1
+    Left = 584
+    Top = 296
+  end
 end
