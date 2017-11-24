@@ -46,7 +46,6 @@ type
     WebBrowser1: TWebBrowser;
     StringGrid1: TStringGrid;
     LinkGridToDataSourceBindSourceDB12: TLinkGridToDataSource;
-    FDConnectionDisplayDescription: TFDConnection;
     FDQueryDisplayDescription: TFDQuery;
     procedure FormCreate(Sender: TObject);
     procedure ContinuousYes(Sender: TObject);
@@ -151,7 +150,6 @@ end;
 procedure TForm2.StringGrid1SelectCell(Sender: TObject; const ACol,
   ARow: Integer; var CanSelect: Boolean);
   var
-    query:string;
     sParameter:string;
     s:string;
 begin

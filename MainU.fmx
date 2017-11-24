@@ -249,15 +249,6 @@ object Form2: TForm2
         end>
     end
   end
-  object FDConnectionDisplayDescription: TFDConnection
-    Params.Strings = (
-      'Database=C:\Users\Alan\Desktop\Stats.db'
-      'LockingMode=Normal'
-      'DriverID=SQLite')
-    LoginPrompt = False
-    Left = 464
-    Top = 288
-  end
   object FDQueryDisplayDescription: TFDQuery
     Connection = FDConnection1
     Left = 584
