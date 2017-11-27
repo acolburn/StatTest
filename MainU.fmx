@@ -11,7 +11,7 @@ object Form2: TForm2
   OnCreate = FormCreate
   Left = 660
   Top = 270
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
   object GroupBox1: TGroupBox
     Position.X = 8.000000000000000000
     Position.Y = 24.000000000000000000
@@ -205,8 +205,11 @@ object Form2: TForm2
     TabOrder = 19
     RowCount = 10
     OnSelectCell = StringGrid1SelectCell
-    Viewport.Width = 412.000000000000000000
-    Viewport.Height = 232.000000000000000000
+    Viewport.Width = 411.000000000000000000
+    Viewport.Height = 225.000000000000000000
+    object StringColumn1: TStringColumn
+      Header = 'Statistical Test'
+    end
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
@@ -215,42 +218,17 @@ object Form2: TForm2
         'tTest\Win32\Debug\Stats.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
-    Connected = True
     LoginPrompt = False
     BeforeConnect = FDConnection1BeforeConnect
     Left = 480
     Top = 48
   end
   object FDQuery1: TFDQuery
-    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'select * from tests')
     Left = 504
     Top = 184
-  end
-  object BindSourceDB1: TBindSourceDB
-    DataSet = FDQuery1
-    ScopeMappings = <>
-    Left = 544
-    Top = 152
-  end
-  object BindingsList1: TBindingsList
-    Methods = <>
-    OutputConverters = <>
-    Left = 588
-    Top = 141
-    object LinkGridToDataSourceBindSourceDB12: TLinkGridToDataSource
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      GridControl = StringGrid1
-      Columns = <
-        item
-          MemberName = 'test-name'
-          Header = 'Test Name'
-          Width = 300
-        end>
-    end
   end
   object FDQueryDisplayDescription: TFDQuery
     Connection = FDConnection1
