@@ -195,33 +195,25 @@ object Form2: TForm2
   end
   object WebBrowser1: TWebBrowser
     Anchors = [akLeft, akTop, akRight, akBottom]
-    Size.Width = 685.000000000000000000
+    Size.Width = 709.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
-    Position.X = 32.000000000000000000
+    Position.X = 4.000000000000000000
     Position.Y = 528.000000000000000000
   end
-  object ListBox1: TListBox
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TListItemAppearance'
+    ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
     Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
     Position.Y = 336.000000000000000000
     Size.Width = 705.000000000000000000
-    Size.Height = 169.000000000000000000
+    Size.Height = 177.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 21
-    DisableFocusEffect = True
-    DefaultItemStyles.ItemStyle = ''
-    DefaultItemStyles.GroupHeaderStyle = ''
-    DefaultItemStyles.GroupFooterStyle = ''
-    OnChange = ListBox1Change
-    Viewport.Width = 705.000000000000000000
-    Viewport.Height = 121.000000000000000000
-    object ListBoxHeader1: TListBoxHeader
-      Size.Width = 705.000000000000000000
-      Size.Height = 48.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-    end
+    TabOrder = 23
+    OnChange = ListView1Change
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'FMX'

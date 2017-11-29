@@ -44,8 +44,7 @@ type
     WebBrowser1: TWebBrowser;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
-    ListBox1: TListBox;
-    ListBoxHeader1: TListBoxHeader;
+    ListView1: TListView;
     procedure FormCreate(Sender: TObject);
     procedure ContinuousYes(Sender: TObject);
     procedure ContinuousNo(Sender: TObject);
@@ -62,9 +61,10 @@ type
     procedure TwoSamplesDontKnow(Sender: TObject);
     procedure ParametricDontKnow(Sender: TObject);
     procedure CovariatesDontKnow(Sender: TObject);
+    procedure ListView1Change(Sender: TObject);
 //    procedure StringGrid1SelectCell(Sender: TObject; const ACol, ARow: Integer;
 //      var CanSelect: Boolean);
-    procedure ListBox1Change(Sender: TObject);
+//    procedure ListBox1Change(Sender: TObject);
   private
     procedure UpdateDisplay;
   public
@@ -129,16 +129,28 @@ begin
   UpdateDisplay;
 end;
 
-procedure TForm2.ListBox1Change(Sender: TObject);
+procedure TForm2.ListView1Change(Sender: TObject);
 var
   s:string;
 begin
-if ListBox1.ItemIndex>-1 then
-  begin
-      s:=TestHandler.GetDescription(ListBox1.Items[ListBox1.ItemIndex]);
-      WebBrowser1.LoadFromStrings(s,'');
-  end;
+   if ListView1.ItemIndex>-1 then
+   begin
+     s:=ListView1.Items[ListView1.ItemIndex].Text;
+     WebBrowser1.LoadFromStrings(s,'');
+   end;
+
 end;
+
+//procedure TForm2.ListBox1Change(Sender: TObject);
+//var
+//  s:string;
+//begin
+//if ListBox1.ItemIndex>-1 then
+//  begin
+//      s:=TestHandler.GetDescription(ListBox1.Items[ListBox1.ItemIndex]);
+//      WebBrowser1.LoadFromStrings(s,'');
+//  end;
+//end;
 
 procedure TForm2.ParametricNo(Sender: TObject);
 begin
@@ -167,20 +179,22 @@ end;
 procedure TForm2.UpdateDisplay;
 var
   sl: TStringList;
-//  i: Integer;
-//  item:TListItem;
+  i: Integer;
+  item:TListViewItem;
 begin
   //clear rows
 //  for I := 0 to StringGrid1.RowCount-1 do
 //    StringGrid1.Cells[0,i]:='';
-  ListBox1.Items.Clear;
+  ListView1.Items.Clear;
 
   sl := TStringList.Create;
   try
     sl.Text := TestHandler.updateSQL;
-//    for i := 0 to sl.Count - 1 do
-//      StringGrid1.Cells[0, i] := sl[i];
-    ListBox1.Items.Assign(sl);
+    for i := 0 to sl.Count - 1 do
+    begin
+      item:=ListView1.Items.Add;
+      item.text := sl[i];
+    end;
   finally
     sl.Free;
   end;

@@ -21,11 +21,6 @@ inherited Form2_LgXhdpiTb: TForm2_LgXhdpiTb
   inherited WebBrowser1: TWebBrowser
     Size.Width = 449.000000000000000000
     Size.Height = 277.000000000000000000
-    Position.X = 8.000000000000000000
     Position.Y = 548.000000000000000000
-  end
-  inherited ListBox1: TListBox
-    Viewport.Width = 705.000000000000000000
-    Viewport.Height = 121.000000000000000000
   end
 end
