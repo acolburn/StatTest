@@ -3,7 +3,7 @@ object Form2: TForm2
   Top = 270
   Caption = 'Select a Statistical Test'
   ClientHeight = 594
-  ClientWidth = 1023
+  ClientWidth = 730
   Position = Designed
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -13,9 +13,10 @@ object Form2: TForm2
   Top = 270
   DesignerMasterStyle = 3
   object GroupBox1: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
     Position.Y = 24.000000000000000000
-    Size.Width = 417.000000000000000000
+    Size.Width = 705.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     Text = 'Continuous (or Interval) Data'
@@ -30,8 +31,8 @@ object Form2: TForm2
     end
     object rdoContinuousNo: TRadioButton
       GroupName = 'GroupBox1'
-      Position.X = 176.000000000000000000
-      Position.Y = 23.000000000000000000
+      Position.X = 290.000000000000000000
+      Position.Y = 24.000000000000000000
       TabOrder = 1
       Text = 'No'
       OnClick = ContinuousNo
@@ -39,8 +40,8 @@ object Form2: TForm2
     object rdoContinuousDontKnow: TRadioButton
       GroupName = 'GroupBox1'
       IsChecked = True
-      Position.X = 320.000000000000000000
-      Position.Y = 23.000000000000000000
+      Position.X = 572.000000000000000000
+      Position.Y = 24.000000000000000000
       Size.Width = 105.000000000000000000
       Size.Height = 19.000000000000000000
       Size.PlatformDefault = False
@@ -50,9 +51,10 @@ object Form2: TForm2
     end
   end
   object GroupBox2: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
     Position.Y = 88.000000000000000000
-    Size.Width = 417.000000000000000000
+    Size.Width = 705.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     Text = 'Independent or Dependent Samples'
@@ -67,7 +69,7 @@ object Form2: TForm2
     end
     object rdoDependent: TRadioButton
       GroupName = 'GroupBox2'
-      Position.X = 176.000000000000000000
+      Position.X = 284.000000000000000000
       Position.Y = 24.000000000000000000
       TabOrder = 1
       Text = 'Dependent'
@@ -76,7 +78,7 @@ object Form2: TForm2
     object rdoIndependentDontKnow: TRadioButton
       GroupName = 'GroupBox2'
       IsChecked = True
-      Position.X = 320.000000000000000000
+      Position.X = 560.000000000000000000
       Position.Y = 23.000000000000000000
       TabOrder = 0
       Text = 'Don'#39't know'
@@ -84,9 +86,10 @@ object Form2: TForm2
     end
   end
   object GroupBox3: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
     Position.Y = 152.000000000000000000
-    Size.Width = 417.000000000000000000
+    Size.Width = 705.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     Text = '2-samples or >2-samples'
@@ -102,7 +105,7 @@ object Form2: TForm2
     object rdo2SamplesDontKnow: TRadioButton
       GroupName = 'GroupBox3'
       IsChecked = True
-      Position.X = 320.000000000000000000
+      Position.X = 560.000000000000000000
       Position.Y = 23.000000000000000000
       TabOrder = 0
       Text = 'Don'#39't know'
@@ -110,9 +113,10 @@ object Form2: TForm2
     end
   end
   object GroupBox4: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
     Position.Y = 216.000000000000000000
-    Size.Width = 417.000000000000000000
+    Size.Width = 705.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     Text = 'Parametric Data'
@@ -127,7 +131,7 @@ object Form2: TForm2
     end
     object rdoNonParametric: TRadioButton
       GroupName = 'GroupBox4'
-      Position.X = 176.000000000000000000
+      Position.X = 288.000000000000000000
       Position.Y = 23.000000000000000000
       TabOrder = 2
       Text = 'No'
@@ -136,7 +140,7 @@ object Form2: TForm2
     object rdoParametricDontKnow: TRadioButton
       GroupName = 'GroupBox4'
       IsChecked = True
-      Position.X = 320.000000000000000000
+      Position.X = 568.000000000000000000
       Position.Y = 23.000000000000000000
       TabOrder = 0
       Text = 'Don'#39't know'
@@ -144,9 +148,10 @@ object Form2: TForm2
     end
   end
   object GroupBox5: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
     Position.Y = 272.000000000000000000
-    Size.Width = 417.000000000000000000
+    Size.Width = 705.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     Text = 'Covariates'
@@ -161,7 +166,7 @@ object Form2: TForm2
     end
     object rdoCovariatesNo: TRadioButton
       GroupName = 'GroupBox5'
-      Position.X = 176.000000000000000000
+      Position.X = 288.000000000000000000
       Position.Y = 23.000000000000000000
       TabOrder = 2
       Text = 'No'
@@ -170,8 +175,8 @@ object Form2: TForm2
     object rdoCovariatesDontKnow: TRadioButton
       GroupName = 'GroupBox5'
       IsChecked = True
-      Position.X = 320.000000000000000000
-      Position.Y = 23.000000000000000000
+      Position.X = 568.000000000000000000
+      Position.Y = 15.000000000000000000
       TabOrder = 0
       Text = 'Don'#39't know'
       OnClick = CovariatesDontKnow
@@ -179,44 +184,52 @@ object Form2: TForm2
   end
   object rdo3Samples: TRadioButton
     GroupName = 'GroupBox3'
-    Position.X = 184.000000000000000000
+    Position.X = 280.000000000000000000
     Position.Y = 176.000000000000000000
+    Size.Width = 201.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 14
     Text = '3 or more samples'
     OnClick = ThreeOrMoreSamples
   end
   object WebBrowser1: TWebBrowser
     Anchors = [akLeft, akTop, akRight, akBottom]
-    Size.Width = 553.000000000000000000
-    Size.Height = 553.000000000000000000
+    Size.Width = 685.000000000000000000
+    Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
-    Position.X = 448.000000000000000000
-    Position.Y = 32.000000000000000000
+    Position.X = 32.000000000000000000
+    Position.Y = 528.000000000000000000
   end
-  object StringGrid1: TStringGrid
-    Anchors = [akLeft, akTop, akBottom]
-    CanFocus = True
-    ClipChildren = True
+  object ListBox1: TListBox
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
-    Position.Y = 328.000000000000000000
-    Size.Width = 416.000000000000000000
-    Size.Height = 257.000000000000000000
+    Position.Y = 336.000000000000000000
+    Size.Width = 705.000000000000000000
+    Size.Height = 169.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 19
-    OnSelectCell = StringGrid1SelectCell
-    Viewport.Width = 411.000000000000000000
-    Viewport.Height = 225.000000000000000000
-    object StringColumn1: TStringColumn
-      Header = 'Statistical Test'
+    TabOrder = 21
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    OnChange = ListBox1Change
+    Viewport.Width = 705.000000000000000000
+    Viewport.Height = 121.000000000000000000
+    object ListBoxHeader1: TListBoxHeader
+      Size.Width = 705.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
     end
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'FMX'
-    Left = 600
-    Top = 416
+    Left = 384
+    Top = 336
   end
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
-    Left = 488
-    Top = 408
+    Left = 360
+    Top = 384
   end
 end

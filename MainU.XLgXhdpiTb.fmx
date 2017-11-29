@@ -6,9 +6,8 @@ inherited Form2_XLgXhdpiTb: TForm2_XLgXhdpiTb
     Size.Width = 330.000000000000000000
     Size.Height = 1214.000000000000000000
   end
-  inherited StringGrid1: TStringGrid
-    Size.Height = 918.000000000000000000
-    Viewport.Width = 411.000000000000000000
-    Viewport.Height = 886.000000000000000000
+  inherited ListBox1: TListBox
+    Viewport.Width = 705.000000000000000000
+    Viewport.Height = 121.000000000000000000
   end
 end

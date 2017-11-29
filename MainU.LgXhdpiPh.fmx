@@ -2,13 +2,28 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
   ClientHeight = 695
   ClientWidth = 450
   DesignerMasterStyle = 3
-  inherited WebBrowser1: TWebBrowser
-    Size.Width = 0.000000000000000000
-    Size.Height = 654.000000000000000000
+  inherited GroupBox2: TGroupBox
+    Position.Y = 83.000000000000000000
   end
-  inherited StringGrid1: TStringGrid
-    Size.Height = 358.000000000000000000
-    Viewport.Width = 411.000000000000000000
-    Viewport.Height = 326.000000000000000000
+  inherited GroupBox3: TGroupBox
+    Position.Y = 142.000000000000000000
+  end
+  inherited GroupBox4: TGroupBox
+    Position.Y = 201.000000000000000000
+  end
+  inherited GroupBox5: TGroupBox
+    Position.Y = 260.000000000000000000
+  end
+  inherited WebBrowser1: TWebBrowser
+    Size.Width = 425.000000000000000000
+    Size.Height = 150.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 520.000000000000000000
+  end
+  inherited ListBox1: TListBox
+    Position.Y = 320.000000000000000000
+    Size.Height = 185.000000000000000000
+    Viewport.Width = 705.000000000000000000
+    Viewport.Height = 137.000000000000000000
   end
 end

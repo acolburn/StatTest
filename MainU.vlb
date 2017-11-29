@@ -1,5 +1,5 @@
 ﻿[]
-Coordinates=92,1,90,33
+Coordinates=367,276,70,51
 
 [GroupBox3]
 Coordinates=135,155,70,51
@@ -63,7 +63,4 @@ Coordinates=658,1,101,33
 
 [rdo3Samples]
 Coordinates=367,164,79,33
-
-[StringGrid1]
-Coordinates=367,276,70,51
 

@@ -16,7 +16,8 @@ uses
   FMX.Bind.Navigator, Data.Bind.Grid, FMX.Controls.Presentation, FMX.ScrollBox,
   FMX.Grid, Data.Bind.DBScope, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, FMX.StdCtrls, FMX.WebBrowser, FireDAC.Comp.UI,
-  System.IOUtils, DM;
+  System.IOUtils, DM, FMX.ListBox, FMX.ListView.Types, FMX.ListView.Appearances,
+  FMX.ListView.Adapters.Base, FMX.ListView;
 
 type
   TForm2 = class(TForm)
@@ -41,10 +42,10 @@ type
     rdoParametricDontKnow: TRadioButton;
     rdoCovariatesDontKnow: TRadioButton;
     WebBrowser1: TWebBrowser;
-    StringGrid1: TStringGrid;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
-    StringColumn1: TStringColumn;
+    ListBox1: TListBox;
+    ListBoxHeader1: TListBoxHeader;
     procedure FormCreate(Sender: TObject);
     procedure ContinuousYes(Sender: TObject);
     procedure ContinuousNo(Sender: TObject);
@@ -61,9 +62,9 @@ type
     procedure TwoSamplesDontKnow(Sender: TObject);
     procedure ParametricDontKnow(Sender: TObject);
     procedure CovariatesDontKnow(Sender: TObject);
-    procedure StringGrid1SelectCell(Sender: TObject; const ACol, ARow: Integer;
-      var CanSelect: Boolean);
-    procedure FDConnection1BeforeConnect(Sender: TObject);
+//    procedure StringGrid1SelectCell(Sender: TObject; const ACol, ARow: Integer;
+//      var CanSelect: Boolean);
+    procedure ListBox1Change(Sender: TObject);
   private
     procedure UpdateDisplay;
   public
@@ -128,6 +129,17 @@ begin
   UpdateDisplay;
 end;
 
+procedure TForm2.ListBox1Change(Sender: TObject);
+var
+  s:string;
+begin
+if ListBox1.ItemIndex>-1 then
+  begin
+      s:=TestHandler.GetDescription(ListBox1.Items[ListBox1.ItemIndex]);
+      WebBrowser1.LoadFromStrings(s,'');
+  end;
+end;
+
 procedure TForm2.ParametricNo(Sender: TObject);
 begin
   TestHandler.Parametric(no);
@@ -140,40 +152,45 @@ begin
   UpdateDisplay;
 end;
 
-procedure TForm2.StringGrid1SelectCell(Sender: TObject;
-  const ACol, ARow: Integer; var CanSelect: Boolean);
-var
-  s: string;
-begin
-  if ARow > -1 then
-  begin
-      s:=TestHandler.GetDescription(StringGrid1.Cells[ACol,ARow]);
-      WebBrowser1.LoadFromStrings(s,'');
-  end;
-end;
+//procedure TForm2.StringGrid1SelectCell(Sender: TObject;
+//  const ACol, ARow: Integer; var CanSelect: Boolean);
+//var
+//  s: string;
+//begin
+//  if ARow > -1 then
+//  begin
+//      s:=TestHandler.GetDescription(StringGrid1.Cells[ACol,ARow]);
+//      WebBrowser1.LoadFromStrings(s,'');
+//  end;
+//end;
 
 procedure TForm2.UpdateDisplay;
 var
   sl: TStringList;
-  i: Integer;
+//  i: Integer;
+//  item:TListItem;
 begin
   //clear rows
-  for I := 0 to StringGrid1.RowCount-1 do
-    StringGrid1.Cells[0,i]:='';
+//  for I := 0 to StringGrid1.RowCount-1 do
+//    StringGrid1.Cells[0,i]:='';
+  ListBox1.Items.Clear;
 
   sl := TStringList.Create;
   try
     sl.Text := TestHandler.updateSQL;
-    for i := 0 to sl.Count - 1 do
-      StringGrid1.Cells[0, i] := sl[i];
+//    for i := 0 to sl.Count - 1 do
+//      StringGrid1.Cells[0, i] := sl[i];
+    ListBox1.Items.Assign(sl);
   finally
     sl.Free;
   end;
+
+
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-  StringColumn1.Width := StringGrid1.Width;
+//  StringColumn1.Width := StringGrid1.Width;
   UpdateDisplay;
 end;
 
