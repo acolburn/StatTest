@@ -135,7 +135,7 @@ var
 begin
    if ListView1.ItemIndex>-1 then
    begin
-     s:=ListView1.Items[ListView1.ItemIndex].Text;
+     s:=TestHandler.GetDescription(ListView1.Items[ListView1.ItemIndex].Text);
      WebBrowser1.LoadFromStrings(s,'');
    end;
 
