@@ -1,0 +1,20 @@
+inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited WebBrowser1: TWebBrowser
+    Size.Width = 0.000000000000000000
+    Size.Height = 654.000000000000000000
+  end
+  inherited StringGrid1: TStringGrid
+    Size.Height = 358.000000000000000000
+    Viewport.Width = 411.000000000000000000
+    Viewport.Height = 326.000000000000000000
+  end
+  inherited FDConnection1: TFDConnection
+    Connected = True
+  end
+  inherited FDQuery1: TFDQuery
+    Active = True
+  end
+end

@@ -1,0 +1,45 @@
+inherited Form2_LgXhdpiTb: TForm2_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  FormFactor.Height = 880
+  DesignerMasterStyle = 3
+  inherited GroupBox1: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
+    Size.Width = 449.000000000000000000
+  end
+  inherited GroupBox2: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
+    Size.Width = 449.000000000000000000
+  end
+  inherited GroupBox3: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
+    Size.Width = 449.000000000000000000
+  end
+  inherited GroupBox4: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
+    Size.Width = 449.000000000000000000
+  end
+  inherited GroupBox5: TGroupBox
+    Anchors = [akLeft, akTop, akRight]
+    Size.Width = 449.000000000000000000
+  end
+  inherited WebBrowser1: TWebBrowser
+    Size.Width = 449.000000000000000000
+    Size.Height = 277.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 548.000000000000000000
+  end
+  inherited StringGrid1: TStringGrid
+    Touch.InteractiveGestures = [PressAndTap]
+    Size.Width = 449.000000000000000000
+    Size.Height = 201.000000000000000000
+    Viewport.Width = 444.000000000000000000
+    Viewport.Height = 169.000000000000000000
+  end
+  inherited FDConnection1: TFDConnection
+    Connected = True
+  end
+  inherited FDQuery1: TFDQuery
+    Active = True
+  end
+end
