@@ -11,10 +11,4 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Viewport.Width = 411.000000000000000000
     Viewport.Height = 326.000000000000000000
   end
-  inherited FDConnection1: TFDConnection
-    Connected = True
-  end
-  inherited FDQuery1: TFDQuery
-    Active = True
-  end
 end

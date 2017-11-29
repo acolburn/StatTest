@@ -20,8 +20,6 @@ uses
 
 type
   TForm2 = class(TForm)
-    FDConnection1: TFDConnection;
-    FDQuery1: TFDQuery;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
     GroupBox3: TGroupBox;
@@ -44,7 +42,6 @@ type
     rdoCovariatesDontKnow: TRadioButton;
     WebBrowser1: TWebBrowser;
     StringGrid1: TStringGrid;
-    FDQueryDisplayDescription: TFDQuery;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     StringColumn1: TStringColumn;
@@ -67,20 +64,9 @@ type
     procedure StringGrid1SelectCell(Sender: TObject; const ACol, ARow: Integer;
       var CanSelect: Boolean);
     procedure FDConnection1BeforeConnect(Sender: TObject);
-    // procedure GridBindSourceDB1SelectCell(Sender: TObject; const ACol,
-    // ARow: Integer; var CanSelect: Boolean);
   private
     procedure UpdateDisplay;
-    { Private declarations }
-    // fContinuous: string;
-    // f3Samples: string;
-    // fParametric: string;
-    // fIndepSamples: string;
-    // fCovariate: string;
-    // fSelect: string;
-    // procedure updateSQL;
   public
-    { Public declarations }
   end;
 
 var
@@ -95,8 +81,6 @@ implementation
 
 procedure TForm2.TwoSamples(Sender: TObject);
 begin
-  // f3Samples := ' and `3-samples`=0';
-  // updateSQL;
   TestHandler.ThreeSamples(no);
   UpdateDisplay;
 
@@ -104,64 +88,54 @@ end;
 
 procedure TForm2.ThreeOrMoreSamples(Sender: TObject);
 begin
-  // f3Samples := ' and `3-samples`=1';
-  // updateSQL;
   TestHandler.ThreeSamples(yes);
   UpdateDisplay;
 end;
 
 procedure TForm2.ContinuousNo(Sender: TObject);
 begin
-  // fContinuous := ' where continuous=0';
   TestHandler.ContinuousData(no);
   UpdateDisplay;
 end;
 
 procedure TForm2.ContinuousYes(Sender: TObject);
 begin
-  // fContinuous := ' where continuous=1';
   TestHandler.ContinuousData(yes);
   UpdateDisplay;
 end;
 
 procedure TForm2.CovariatesNo(Sender: TObject);
 begin
-  // fCovariate := ' and covariate=0';
   TestHandler.Covariates(no);
   UpdateDisplay;
 end;
 
 procedure TForm2.CovariatesYes(Sender: TObject);
 begin
-  // fCovariate := ' and covariate=1';
   TestHandler.Covariates(yes);
   UpdateDisplay;
 end;
 
 procedure TForm2.DependentSamples(Sender: TObject);
 begin
-  // fIndepSamples := ' and `indep-samples`=0';
   TestHandler.IndependentSamples(no);
   UpdateDisplay;
 end;
 
 procedure TForm2.IndependentSamples(Sender: TObject);
 begin
-  // fIndepSamples := ' and `indep-samples`=1';
   TestHandler.IndependentSamples(yes);
   UpdateDisplay;
 end;
 
 procedure TForm2.ParametricNo(Sender: TObject);
 begin
-  // fParametric := ' and parametric=0';
   TestHandler.Parametric(no);
   UpdateDisplay;
 end;
 
 procedure TForm2.ParametricYes(Sender: TObject);
 begin
-  // fParametric := ' and parametric=1';
   TestHandler.Parametric(yes);
   UpdateDisplay;
 end;
@@ -169,27 +143,13 @@ end;
 procedure TForm2.StringGrid1SelectCell(Sender: TObject;
   const ACol, ARow: Integer; var CanSelect: Boolean);
 var
-  sParameter: string;
   s: string;
 begin
   if ARow > -1 then
   begin
-    sParameter := StringGrid1.Cells[ACol, ARow];
-    FDQueryDisplayDescription.SQL.Text :=
-      'SELECT description FROM Tests WHERE "test-name"=:aParameter';
-    FDQueryDisplayDescription.ParamByName('aParameter').AsString := sParameter;
-    FDQueryDisplayDescription.Open();
-    s := FDQueryDisplayDescription.FieldByName('description').AsString;
-    WebBrowser1.LoadFromStrings(s, '');
+      s:=TestHandler.GetDescription(StringGrid1.Cells[ACol,ARow]);
+      WebBrowser1.LoadFromStrings(s,'');
   end;
-end;
-
-procedure TForm2.FDConnection1BeforeConnect(Sender: TObject);
-begin
-{$IF DEFINED(iOS) OR DEFINED(Android)}
-  FDConnection1.Params.Values['Database'] :=
-    TPath.Combine(TPath.GetDocumentsPath, 'Stats.db');
-{$ENDIF}
 end;
 
 procedure TForm2.UpdateDisplay;
@@ -197,6 +157,10 @@ var
   sl: TStringList;
   i: Integer;
 begin
+  //clear rows
+  for I := 0 to StringGrid1.RowCount-1 do
+    StringGrid1.Cells[0,i]:='';
+
   sl := TStringList.Create;
   try
     sl.Text := TestHandler.updateSQL;
@@ -209,76 +173,39 @@ end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-  // fSelect := 'SELECT * FROM tests';
-  // need something with a 'where'
-  // or else an error will be thrown
-  // until user clicks the Continuous group, none of
-  // the other variables contain a 'where'
-  // fContinuous := ' where (continuous=1 or continuous=0)';
   StringColumn1.Width := StringGrid1.Width;
+  UpdateDisplay;
 end;
 
-// procedure TForm2.GridBindSourceDB1SelectCell(Sender: TObject; const ACol,
-// ARow: Integer; var CanSelect: Boolean);
-// begin
-// showmessage('OnSelectCell. Col='+IntToStr(ACol)+',Row='+IntToStr(ARow));
-// end;
 
 procedure TForm2.TwoSamplesDontKnow(Sender: TObject);
 begin
-  // f3Samples := '';
-  // updateSQL;
   TestHandler.ThreeSamples(dunno);
   UpdateDisplay;
 end;
 
 procedure TForm2.ContinuousDontKnow(Sender: TObject);
 begin
-  // fContinuous := ' where (continuous=1 or continuous=0)';
   TestHandler.ContinuousData(dunno);
   UpdateDisplay;
 end;
 
 procedure TForm2.CovariatesDontKnow(Sender: TObject);
 begin
-  // fCovariate := '';
   TestHandler.Covariates(dunno);
   UpdateDisplay;
 end;
 
 procedure TForm2.IndependentDontKnow(Sender: TObject);
 begin
-  // fIndepSamples := '';
   TestHandler.IndependentSamples(dunno);
   UpdateDisplay;
 end;
 
 procedure TForm2.ParametricDontKnow(Sender: TObject);
 begin
-  // fParametric := '';
   TestHandler.Parametric(dunno);
   UpdateDisplay;
 end;
-
-// procedure TForm2.updateSQL;
-// var
-// sl:TStringList;
-// begin
-// FDQuery1.SQL.Text := fSelect + fContinuous + f3Samples + fParametric +
-// fIndepSamples + fCovariate;
-// FDQuery1.Active := true;
-//
-// sl:=TStringList.Create;
-// FDQuery1.First;
-// while not FDQuery1.Eof do
-// begin
-// sl.Add(FDQuery1.FieldByName('test-name').AsString);
-// FDQuery1.Next;
-// end;
-// showmessage(sl.Text);
-// sl.Free;
-//
-//
-// end;
 
 end.

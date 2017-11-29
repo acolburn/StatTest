@@ -10,7 +10,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm2, Form2);
   Application.CreateForm(TDataModule1, TestHandler);
+  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.

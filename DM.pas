@@ -35,6 +35,7 @@ type
     procedure Parametric(answer:TAnswer);
     procedure Covariates(answer:TAnswer);
     function updateSQL: string;
+    function GetDescription(aParameter:string): string;
 
   end;
 
@@ -56,7 +57,7 @@ begin
   else if answer=no then
   fContinuous := ' where continuous=0'
   else if answer=dunno then
-  fContinuous := '' ;
+  fContinuous := ' where (continuous=1 or continuous=0)' ;
 end;
 
 procedure TDataModule1.Covariates(answer: TAnswer);
@@ -66,7 +67,7 @@ begin
   else if answer=no then
   fCovariate := ' and covariate=0'
   else if answer=dunno then
-  fContinuous := '';
+  fCovariate := '';
 
 
 end;
@@ -88,6 +89,16 @@ begin
 {$IF DEFINED(iOS) OR DEFINED(Android)}
   FDConnection1.Params.Values['Database']:=TPath.Combine(TPath.GetDocumentsPath,'Stats.db');
   {$ENDIF}
+end;
+
+function TDataModule1.GetDescription(aParameter: string): string;
+begin
+
+    FDQuery1.SQL.Text :=
+      'SELECT description FROM Tests WHERE "test-name"=:aParameter';
+    FDQuery1.ParamByName('aParameter').AsString := aParameter;
+    FDQuery1.Open();
+    result := FDQuery1.FieldByName('description').AsString;
 end;
 
 procedure TDataModule1.IndependentSamples(answer: TAnswer);
@@ -123,6 +134,8 @@ end;
 
 function TDataModule1.updateSQL: string;
 begin
+  fTestList.Clear;
+
   FDQuery1.SQL.Text := fSelect + fContinuous + f3Samples + fParametric +
     fIndepSamples + fCovariate;
   FDQuery1.Active := true;
