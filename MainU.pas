@@ -45,6 +45,7 @@ type
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     ListView1: TListView;
+    VertScrollBox1: TVertScrollBox;
     procedure FormCreate(Sender: TObject);
     procedure ContinuousYes(Sender: TObject);
     procedure ContinuousNo(Sender: TObject);

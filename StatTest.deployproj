@@ -121,10 +121,20 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Debug\classes.dex" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>StatTest\classes\</RemoteDir>
-            <RemoteName>classes.dex</RemoteName>
-            <DeployClass>AndroidClassesDexFile</DeployClass>
+        <DeployFile Include="Android\Debug\libStatTest.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>StatTest\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libStatTest.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>StatTest\res\drawable\</RemoteDir>
+            <RemoteName>splash_image_def.xml</RemoteName>
+            <DeployClass>AndroidSplashImageDef</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -139,10 +149,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>StatTest\res\drawable\</RemoteDir>
-            <RemoteName>splash_image_def.xml</RemoteName>
-            <DeployClass>AndroidSplashImageDef</DeployClass>
+        <DeployFile Include="Android\Debug\classes.dex" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>StatTest\classes\</RemoteDir>
+            <RemoteName>classes.dex</RemoteName>
+            <DeployClass>AndroidClassesDexFile</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -156,16 +166,6 @@
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="Android\Debug\libStatTest.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>StatTest\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libStatTest.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="Android\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>StatTest\</RemoteDir>
