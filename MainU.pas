@@ -67,6 +67,8 @@ type
     procedure ParametricDontKnow(Sender: TObject);
     procedure CovariatesDontKnow(Sender: TObject);
     procedure ListView1Change(Sender: TObject);
+    procedure WebBrowser1Gesture(Sender: TObject;
+      const EventInfo: TGestureEventInfo; var Handled: Boolean);
 //    procedure StringGrid1SelectCell(Sender: TObject; const ACol, ARow: Integer;
 //      var CanSelect: Boolean);
 //    procedure ListBox1Change(Sender: TObject);
@@ -84,6 +86,7 @@ implementation
 {$R *.LgXhdpiTb.fmx ANDROID}
 {$R *.XLgXhdpiTb.fmx ANDROID}
 {$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.Windows.fmx MSWINDOWS}
 
 procedure TForm2.TwoSamples(Sender: TObject);
 begin
@@ -145,6 +148,7 @@ begin
      '</head>';
      s:=s+'<body>'+TestHandler.GetDescription(ListView1.Items[ListView1.ItemIndex].Text)+'</body>';
      WebBrowser1.LoadFromStrings(s,'');
+     TabControl1.ActiveTab:=TabItem2;
    end;
 
 end;
@@ -208,6 +212,12 @@ begin
   end;
 
 
+end;
+
+procedure TForm2.WebBrowser1Gesture(Sender: TObject;
+  const EventInfo: TGestureEventInfo; var Handled: Boolean);
+begin
+  TabControl1.ActiveTab:=TabItem1;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);

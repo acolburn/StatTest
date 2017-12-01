@@ -12,7 +12,7 @@ object Form2: TForm2
   Touch.GestureManager = GestureManager1
   Left = 660
   Top = 270
-  DesignerMasterStyle = 3
+  DesignerMasterStyle = 0
   object TabControl1: TTabControl
     Align = Client
     Size.Width = 730.000000000000000000
@@ -32,12 +32,14 @@ object Form2: TForm2
         item
         end>
       IsSelected = True
-      Size.Width = 365.000000000000000000
+      Size.Width = 70.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem1'
+      ExplicitSize.cx = 365.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
       object VertScrollBox1: TVertScrollBox
         Align = Client
         Size.Width = 730.000000000000000000
@@ -241,12 +243,14 @@ object Form2: TForm2
         item
         end>
       IsSelected = False
-      Size.Width = 365.000000000000000000
+      Size.Width = 70.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem2'
+      ExplicitSize.cx = 365.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
       object WebBrowser1: TWebBrowser
         Align = Client
         Size.Width = 730.000000000000000000
