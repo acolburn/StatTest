@@ -2,32 +2,51 @@ inherited Form2_XLgXhdpiTb: TForm2_XLgXhdpiTb
   ClientHeight = 1255
   ClientWidth = 800
   DesignerMasterStyle = 3
-  inherited VertScrollBox1: TVertScrollBox
+  inherited TabControl1: TTabControl
     Size.Width = 800.000000000000000000
     Size.Height = 1255.000000000000000000
-    Viewport.Width = 795.000000000000000000
-    Viewport.Height = 1255.000000000000000000
-    inherited GroupBox1: TGroupBox
-      Size.Width = 795.000000000000000000
+    Sizes = (
+      800s
+      1206s
+      800s
+      1206s)
+    inherited TabItem1: TTabItem
+      Size.Width = 400.000000000000000000
+      ExplicitSize.cx = 200.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited VertScrollBox1: TVertScrollBox
+        Size.Width = 800.000000000000000000
+        Size.Height = 1206.000000000000000000
+        Viewport.Width = 800.000000000000000000
+        Viewport.Height = 1206.000000000000000000
+        inherited GroupBox1: TGroupBox
+          Size.Width = 800.000000000000000000
+        end
+        inherited GroupBox2: TGroupBox
+          Size.Width = 800.000000000000000000
+        end
+        inherited GroupBox3: TGroupBox
+          Size.Width = 800.000000000000000000
+        end
+        inherited GroupBox4: TGroupBox
+          Size.Width = 800.000000000000000000
+        end
+        inherited GroupBox5: TGroupBox
+          Size.Width = 800.000000000000000000
+        end
+        inherited ListView1: TListView
+          Size.Width = 800.000000000000000000
+        end
+      end
     end
-    inherited GroupBox2: TGroupBox
-      Size.Width = 795.000000000000000000
-    end
-    inherited GroupBox3: TGroupBox
-      Size.Width = 795.000000000000000000
-    end
-    inherited GroupBox4: TGroupBox
-      Size.Width = 795.000000000000000000
-    end
-    inherited GroupBox5: TGroupBox
-      Size.Width = 795.000000000000000000
-    end
-    inherited ListView1: TListView
-      Size.Width = 795.000000000000000000
-    end
-    inherited WebBrowser1: TWebBrowser
-      Size.Width = 795.000000000000000000
-      Size.Height = 1255.000000000000000000
+    inherited TabItem2: TTabItem
+      Size.Width = 400.000000000000000000
+      ExplicitSize.cx = 100.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited WebBrowser1: TWebBrowser
+        Size.Width = 800.000000000000000000
+        Size.Height = 1206.000000000000000000
+      end
     end
   end
 end

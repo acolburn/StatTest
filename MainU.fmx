@@ -9,211 +9,250 @@ object Form2: TForm2
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
+  Touch.GestureManager = GestureManager1
   Left = 660
   Top = 270
   DesignerMasterStyle = 3
-  object VertScrollBox1: TVertScrollBox
+  object TabControl1: TTabControl
     Align = Client
     Size.Width = 730.000000000000000000
     Size.Height = 594.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 19
-    Viewport.Width = 725.000000000000000000
-    Viewport.Height = 594.000000000000000000
-    object GroupBox1: TGroupBox
-      Align = Top
-      Size.Width = 725.000000000000000000
-      Size.Height = 50.000000000000000000
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 21
+    TabPosition = PlatformDefault
+    Sizes = (
+      730s
+      545s
+      730s
+      545s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 365.000000000000000000
+      Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
-      Text = 'Continuous (or Interval) Data'
+      StyleLookup = ''
       TabOrder = 0
-      object rdoContinuousYes: TRadioButton
-        GroupName = 'GroupBox1'
-        Position.X = 8.000000000000000000
-        Position.Y = 24.000000000000000000
-        TabOrder = 2
-        Text = 'Yes'
-        OnClick = ContinuousYes
-      end
-      object rdoContinuousNo: TRadioButton
-        GroupName = 'GroupBox1'
-        Position.X = 139.000000000000000000
-        Position.Y = 24.000000000000000000
-        TabOrder = 1
-        Text = 'No'
-        OnClick = ContinuousNo
-      end
-      object rdoContinuousDontKnow: TRadioButton
-        GroupName = 'GroupBox1'
-        IsChecked = True
-        Position.X = 270.000000000000000000
-        Position.Y = 24.000000000000000000
-        Size.Width = 105.000000000000000000
-        Size.Height = 19.000000000000000000
+      Text = 'TabItem1'
+      object VertScrollBox1: TVertScrollBox
+        Align = Client
+        Size.Width = 730.000000000000000000
+        Size.Height = 545.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        Text = 'Don'#39't know'
-        OnClick = ContinuousDontKnow
+        Viewport.Width = 730.000000000000000000
+        Viewport.Height = 545.000000000000000000
+        object GroupBox1: TGroupBox
+          Align = Top
+          Size.Width = 730.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Continuous (or Interval) Data'
+          TabOrder = 0
+          object rdoContinuousYes: TRadioButton
+            GroupName = 'GroupBox1'
+            Position.X = 8.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 2
+            Text = 'Yes'
+            OnClick = ContinuousYes
+          end
+          object rdoContinuousNo: TRadioButton
+            GroupName = 'GroupBox1'
+            Position.X = 139.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 1
+            Text = 'No'
+            OnClick = ContinuousNo
+          end
+          object rdoContinuousDontKnow: TRadioButton
+            GroupName = 'GroupBox1'
+            IsChecked = True
+            Position.X = 270.000000000000000000
+            Position.Y = 24.000000000000000000
+            Size.Width = 105.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'Don'#39't know'
+            OnClick = ContinuousDontKnow
+          end
+        end
+        object GroupBox2: TGroupBox
+          Align = Top
+          Position.Y = 50.000000000000000000
+          Size.Width = 730.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Independent or Dependent Samples'
+          TabOrder = 1
+          object rdoIndependent: TRadioButton
+            GroupName = 'GroupBox2'
+            Position.X = 8.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 2
+            Text = 'Independent'
+            OnClick = IndependentSamples
+          end
+          object rdoDependent: TRadioButton
+            GroupName = 'GroupBox2'
+            Position.X = 139.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 1
+            Text = 'Dependent'
+            OnClick = DependentSamples
+          end
+          object rdoIndependentDontKnow: TRadioButton
+            GroupName = 'GroupBox2'
+            IsChecked = True
+            Position.X = 270.000000000000000000
+            Position.Y = 23.000000000000000000
+            TabOrder = 0
+            Text = 'Don'#39't know'
+            OnClick = IndependentDontKnow
+          end
+        end
+        object GroupBox3: TGroupBox
+          Align = Top
+          Position.Y = 100.000000000000000000
+          Size.Width = 730.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = '2-samples or >2-samples'
+          TabOrder = 2
+          object rdo2Samples: TRadioButton
+            GroupName = 'GroupBox3'
+            Position.X = 8.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 1
+            Text = '2 samples'
+            OnClick = TwoSamples
+          end
+          object rdo2SamplesDontKnow: TRadioButton
+            GroupName = 'GroupBox3'
+            IsChecked = True
+            Position.X = 270.000000000000000000
+            Position.Y = 23.000000000000000000
+            TabOrder = 0
+            Text = 'Don'#39't know'
+            OnClick = TwoSamplesDontKnow
+          end
+          object rdo3Samples: TRadioButton
+            GroupName = 'GroupBox3'
+            Position.X = 139.000000000000000000
+            Position.Y = 31.000000000000000000
+            Size.Width = 134.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Text = '3+ samples'
+            OnClick = ThreeOrMoreSamples
+          end
+        end
+        object GroupBox4: TGroupBox
+          Align = Top
+          Position.Y = 150.000000000000000000
+          Size.Width = 730.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Parametric Data'
+          TabOrder = 3
+          object rdoParametric: TRadioButton
+            GroupName = 'GroupBox4'
+            Position.X = 8.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 3
+            Text = 'Yes'
+            OnClick = ParametricYes
+          end
+          object rdoNonParametric: TRadioButton
+            GroupName = 'GroupBox4'
+            Position.X = 139.000000000000000000
+            Position.Y = 23.000000000000000000
+            TabOrder = 2
+            Text = 'No'
+            OnClick = ParametricNo
+          end
+          object rdoParametricDontKnow: TRadioButton
+            GroupName = 'GroupBox4'
+            IsChecked = True
+            Position.X = 270.000000000000000000
+            Position.Y = 23.000000000000000000
+            TabOrder = 0
+            Text = 'Don'#39't know'
+            OnClick = ParametricDontKnow
+          end
+        end
+        object GroupBox5: TGroupBox
+          Align = Top
+          Position.Y = 200.000000000000000000
+          Size.Width = 730.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Covariates'
+          TabOrder = 4
+          object rdoCovariatesYes: TRadioButton
+            GroupName = 'GroupBox5'
+            Position.X = 8.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 3
+            Text = 'Yes'
+            OnClick = CovariatesYes
+          end
+          object rdoCovariatesNo: TRadioButton
+            GroupName = 'GroupBox5'
+            Position.X = 139.000000000000000000
+            Position.Y = 23.000000000000000000
+            TabOrder = 2
+            Text = 'No'
+            OnClick = CovariatesNo
+          end
+          object rdoCovariatesDontKnow: TRadioButton
+            GroupName = 'GroupBox5'
+            IsChecked = True
+            Position.X = 270.000000000000000000
+            Position.Y = 15.000000000000000000
+            TabOrder = 0
+            Text = 'Don'#39't know'
+            OnClick = CovariatesDontKnow
+          end
+        end
+        object ListView1: TListView
+          ItemAppearanceClassName = 'TListItemAppearance'
+          ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Align = Top
+          Position.Y = 250.000000000000000000
+          Size.Width = 730.000000000000000000
+          Size.Height = 177.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          OnChange = ListView1Change
+        end
       end
     end
-    object GroupBox2: TGroupBox
-      Align = Top
-      Position.Y = 50.000000000000000000
-      Size.Width = 725.000000000000000000
-      Size.Height = 50.000000000000000000
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 365.000000000000000000
+      Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
-      Text = 'Independent or Dependent Samples'
-      TabOrder = 1
-      object rdoIndependent: TRadioButton
-        GroupName = 'GroupBox2'
-        Position.X = 8.000000000000000000
-        Position.Y = 24.000000000000000000
-        TabOrder = 2
-        Text = 'Independent'
-        OnClick = IndependentSamples
-      end
-      object rdoDependent: TRadioButton
-        GroupName = 'GroupBox2'
-        Position.X = 139.000000000000000000
-        Position.Y = 24.000000000000000000
-        TabOrder = 1
-        Text = 'Dependent'
-        OnClick = DependentSamples
-      end
-      object rdoIndependentDontKnow: TRadioButton
-        GroupName = 'GroupBox2'
-        IsChecked = True
-        Position.X = 270.000000000000000000
-        Position.Y = 23.000000000000000000
-        TabOrder = 0
-        Text = 'Don'#39't know'
-        OnClick = IndependentDontKnow
-      end
-    end
-    object GroupBox3: TGroupBox
-      Align = Top
-      Position.Y = 100.000000000000000000
-      Size.Width = 725.000000000000000000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      Text = '2-samples or >2-samples'
-      TabOrder = 2
-      object rdo2Samples: TRadioButton
-        GroupName = 'GroupBox3'
-        Position.X = 8.000000000000000000
-        Position.Y = 24.000000000000000000
-        TabOrder = 1
-        Text = '2 samples'
-        OnClick = TwoSamples
-      end
-      object rdo2SamplesDontKnow: TRadioButton
-        GroupName = 'GroupBox3'
-        IsChecked = True
-        Position.X = 270.000000000000000000
-        Position.Y = 23.000000000000000000
-        TabOrder = 0
-        Text = 'Don'#39't know'
-        OnClick = TwoSamplesDontKnow
-      end
-      object rdo3Samples: TRadioButton
-        GroupName = 'GroupBox3'
-        Position.X = 139.000000000000000000
-        Position.Y = 31.000000000000000000
-        Size.Width = 134.000000000000000000
-        Size.Height = 19.000000000000000000
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem2'
+      object WebBrowser1: TWebBrowser
+        Align = Client
+        Size.Width = 730.000000000000000000
+        Size.Height = 545.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 2
-        Text = '3+ samples'
-        OnClick = ThreeOrMoreSamples
       end
-    end
-    object GroupBox4: TGroupBox
-      Align = Top
-      Position.Y = 150.000000000000000000
-      Size.Width = 725.000000000000000000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      Text = 'Parametric Data'
-      TabOrder = 3
-      object rdoParametric: TRadioButton
-        GroupName = 'GroupBox4'
-        Position.X = 8.000000000000000000
-        Position.Y = 24.000000000000000000
-        TabOrder = 3
-        Text = 'Yes'
-        OnClick = ParametricYes
-      end
-      object rdoNonParametric: TRadioButton
-        GroupName = 'GroupBox4'
-        Position.X = 139.000000000000000000
-        Position.Y = 23.000000000000000000
-        TabOrder = 2
-        Text = 'No'
-        OnClick = ParametricNo
-      end
-      object rdoParametricDontKnow: TRadioButton
-        GroupName = 'GroupBox4'
-        IsChecked = True
-        Position.X = 270.000000000000000000
-        Position.Y = 23.000000000000000000
-        TabOrder = 0
-        Text = 'Don'#39't know'
-        OnClick = ParametricDontKnow
-      end
-    end
-    object GroupBox5: TGroupBox
-      Align = Top
-      Position.Y = 200.000000000000000000
-      Size.Width = 725.000000000000000000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      Text = 'Covariates'
-      TabOrder = 4
-      object rdoCovariatesYes: TRadioButton
-        GroupName = 'GroupBox5'
-        Position.X = 8.000000000000000000
-        Position.Y = 24.000000000000000000
-        TabOrder = 3
-        Text = 'Yes'
-        OnClick = CovariatesYes
-      end
-      object rdoCovariatesNo: TRadioButton
-        GroupName = 'GroupBox5'
-        Position.X = 139.000000000000000000
-        Position.Y = 23.000000000000000000
-        TabOrder = 2
-        Text = 'No'
-        OnClick = CovariatesNo
-      end
-      object rdoCovariatesDontKnow: TRadioButton
-        GroupName = 'GroupBox5'
-        IsChecked = True
-        Position.X = 270.000000000000000000
-        Position.Y = 15.000000000000000000
-        TabOrder = 0
-        Text = 'Don'#39't know'
-        OnClick = CovariatesDontKnow
-      end
-    end
-    object ListView1: TListView
-      ItemAppearanceClassName = 'TListItemAppearance'
-      ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
-      HeaderAppearanceClassName = 'TListHeaderObjects'
-      FooterAppearanceClassName = 'TListHeaderObjects'
-      Align = Top
-      Position.Y = 250.000000000000000000
-      Size.Width = 725.000000000000000000
-      Size.Height = 177.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 5
-      OnChange = ListView1Change
-    end
-    object WebBrowser1: TWebBrowser
-      Align = Top
-      Size.Width = 725.000000000000000000
-      Size.Height = 200.000000000000000000
-      Size.PlatformDefault = False
-      Position.Y = 427.000000000000000000
     end
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
@@ -224,5 +263,10 @@ object Form2: TForm2
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
     Left = 360
     Top = 384
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 352
+    Top = 280
   end
 end

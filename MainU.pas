@@ -17,7 +17,7 @@ uses
   FMX.Grid, Data.Bind.DBScope, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, FMX.StdCtrls, FMX.WebBrowser, FireDAC.Comp.UI,
   System.IOUtils, DM, FMX.ListBox, FMX.ListView.Types, FMX.ListView.Appearances,
-  FMX.ListView.Adapters.Base, FMX.ListView;
+  FMX.ListView.Adapters.Base, FMX.ListView, FMX.TabControl, FMX.Gestures;
 
 type
   TForm2 = class(TForm)
@@ -46,6 +46,10 @@ type
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     ListView1: TListView;
     VertScrollBox1: TVertScrollBox;
+    TabControl1: TTabControl;
+    TabItem1: TTabItem;
+    TabItem2: TTabItem;
+    GestureManager1: TGestureManager;
     procedure FormCreate(Sender: TObject);
     procedure ContinuousYes(Sender: TObject);
     procedure ContinuousNo(Sender: TObject);
@@ -136,7 +140,10 @@ var
 begin
    if ListView1.ItemIndex>-1 then
    begin
-     s:=TestHandler.GetDescription(ListView1.Items[ListView1.ItemIndex].Text);
+     s:='<head> '+
+     '<meta name="viewport" id="viewport" content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1" /> '+
+     '</head>';
+     s:=s+'<body>'+TestHandler.GetDescription(ListView1.Items[ListView1.ItemIndex].Text)+'</body>';
      WebBrowser1.LoadFromStrings(s,'');
    end;
 
