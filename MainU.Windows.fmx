@@ -1,0 +1,60 @@
+inherited Form2_Windows: TForm2_Windows
+  DesignerMasterStyle = 0
+  inherited TabControl1: TTabControl
+    Sizes = (
+      730s
+      545s
+      730s
+      545s)
+    inherited TabItem1: TTabItem
+      Size.Width = 84.000000000000000000
+      ExplicitSize.cx = 365.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited VertScrollBox1: TVertScrollBox
+        Viewport.Width = 730.000000000000000000
+        Viewport.Height = 545.000000000000000000
+        inherited GroupBox1: TGroupBox
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited GroupBox2: TGroupBox
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited GroupBox3: TGroupBox
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited GroupBox4: TGroupBox
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited GroupBox5: TGroupBox
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 81.000000000000000000
+      ExplicitSize.cx = 365.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited WebBrowser1: TWebBrowser
+        Touch.GestureManager = GestureManager1
+        OnGesture = WebBrowser1Gesture
+      end
+    end
+  end
+  inherited GestureManager1: TGestureManager
+    GestureData = <
+      item
+        Control = Owner
+        Collection = <>
+      end
+      item
+        Control = WebBrowser1
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+end
