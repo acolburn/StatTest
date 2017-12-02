@@ -12,7 +12,7 @@ object Form2: TForm2
   Touch.GestureManager = GestureManager1
   Left = 660
   Top = 270
-  DesignerMasterStyle = 3
+  DesignerMasterStyle = 0
   object TabControl1: TTabControl
     Align = Client
     Size.Width = 730.000000000000000000
@@ -32,12 +32,12 @@ object Form2: TForm2
         item
         end>
       IsSelected = True
-      Size.Width = 365.000000000000000000
+      Size.Width = 364.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'TabItem1'
+      Text = 'Choose Test'
       ExplicitSize.cx = 365.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
       object VertScrollBox1: TVertScrollBox
@@ -50,177 +50,216 @@ object Form2: TForm2
         Viewport.Height = 545.000000000000000000
         object GroupBox1: TGroupBox
           Align = Top
+          StyledSettings = [Family, Size, FontColor, Other]
           Size.Width = 730.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Height = 70.000000000000000000
           Size.PlatformDefault = False
           Text = 'Continuous (or Interval) Data'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
           TabOrder = 0
-          object rdoContinuousYes: TRadioButton
-            GroupName = 'GroupBox1'
-            Position.X = 8.000000000000000000
-            Position.Y = 24.000000000000000000
-            TabOrder = 2
-            Text = 'Yes'
-            OnClick = ContinuousYes
-          end
-          object rdoContinuousNo: TRadioButton
-            GroupName = 'GroupBox1'
-            Position.X = 139.000000000000000000
-            Position.Y = 24.000000000000000000
-            TabOrder = 1
-            Text = 'No'
-            OnClick = ContinuousNo
-          end
-          object rdoContinuousDontKnow: TRadioButton
-            GroupName = 'GroupBox1'
-            IsChecked = True
-            Position.X = 270.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 105.000000000000000000
-            Size.Height = 19.000000000000000000
+          object btnContinuousYes: TSpeedButton
+            StaysPressed = True
+            Align = Left
+            GroupName = 'Continuous'
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 0
-            Text = 'Don'#39't know'
-            OnClick = ContinuousDontKnow
+            Text = 'Yes'
+            OnClick = btnContinuousYesClick
+          end
+          object btnContinuousNo: TSpeedButton
+            StaysPressed = True
+            Align = Center
+            GroupName = 'Continuous'
+            Size.Width = 112.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'No'
+            OnClick = btnContinuousNoClick
+          end
+          object btnContinuousDontKnow: TSpeedButton
+            StaysPressed = True
+            Align = Right
+            GroupName = 'Continuous'
+            IsPressed = True
+            Position.X = 618.000000000000000000
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Don'#39't Know'
+            OnClick = btnContinuousDontKnowClick
           end
         end
         object GroupBox2: TGroupBox
           Align = Top
-          Position.Y = 50.000000000000000000
+          StyledSettings = [Family, Size, FontColor, Other]
+          Position.Y = 70.000000000000000000
           Size.Width = 730.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Height = 70.000000000000000000
           Size.PlatformDefault = False
           Text = 'Independent or Dependent Samples'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
           TabOrder = 1
-          object rdoIndependent: TRadioButton
-            GroupName = 'GroupBox2'
-            Position.X = 8.000000000000000000
-            Position.Y = 24.000000000000000000
-            TabOrder = 2
-            Text = 'Independent'
-            OnClick = IndependentSamples
+          object btnIndependent: TSpeedButton
+            StaysPressed = True
+            Align = Left
+            GroupName = 'Independent'
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Yes'
+            OnClick = btnIndependentClick
           end
-          object rdoDependent: TRadioButton
-            GroupName = 'GroupBox2'
-            Position.X = 139.000000000000000000
-            Position.Y = 24.000000000000000000
-            TabOrder = 1
-            Text = 'Dependent'
-            OnClick = DependentSamples
+          object btnDependent: TSpeedButton
+            StaysPressed = True
+            Align = Center
+            GroupName = 'Independent'
+            Size.Width = 112.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'No'
+            OnClick = btnDependentClick
           end
-          object rdoIndependentDontKnow: TRadioButton
-            GroupName = 'GroupBox2'
-            IsChecked = True
-            Position.X = 270.000000000000000000
-            Position.Y = 23.000000000000000000
-            TabOrder = 0
-            Text = 'Don'#39't know'
-            OnClick = IndependentDontKnow
+          object btnIndependentDontKnow: TSpeedButton
+            StaysPressed = True
+            Align = Right
+            GroupName = 'Independent'
+            IsPressed = True
+            Position.X = 618.000000000000000000
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Don'#39't Know'
+            OnClick = btnIndependentDontKnowClick
           end
         end
         object GroupBox3: TGroupBox
           Align = Top
-          Position.Y = 100.000000000000000000
+          StyledSettings = [Family, Size, FontColor, Other]
+          Position.Y = 140.000000000000000000
           Size.Width = 730.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Height = 70.000000000000000000
           Size.PlatformDefault = False
           Text = '2-samples or >2-samples'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
           TabOrder = 2
-          object rdo2Samples: TRadioButton
-            GroupName = 'GroupBox3'
-            Position.X = 8.000000000000000000
-            Position.Y = 24.000000000000000000
-            TabOrder = 1
-            Text = '2 samples'
-            OnClick = TwoSamples
-          end
-          object rdo2SamplesDontKnow: TRadioButton
-            GroupName = 'GroupBox3'
-            IsChecked = True
-            Position.X = 270.000000000000000000
-            Position.Y = 23.000000000000000000
-            TabOrder = 0
-            Text = 'Don'#39't know'
-            OnClick = TwoSamplesDontKnow
-          end
-          object rdo3Samples: TRadioButton
-            GroupName = 'GroupBox3'
-            Position.X = 139.000000000000000000
-            Position.Y = 31.000000000000000000
-            Size.Width = 134.000000000000000000
-            Size.Height = 19.000000000000000000
+          object btn2SamplesYes: TSpeedButton
+            StaysPressed = True
+            Align = Left
+            GroupName = 'TwoSamples'
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 2
-            Text = '3+ samples'
-            OnClick = ThreeOrMoreSamples
+            Text = '2 Samples'
+            OnClick = btn3SamplesNoClick
+          end
+          object btn2SamplesNo: TSpeedButton
+            StaysPressed = True
+            Align = Center
+            GroupName = 'TwoSamples'
+            Size.Width = 112.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            Text = '>2 Samples'
+            OnClick = btn3SamplesYesClick
+          end
+          object btn2SamplesDontKnow: TSpeedButton
+            StaysPressed = True
+            Align = Right
+            GroupName = 'TwoSamples'
+            IsPressed = True
+            Position.X = 618.000000000000000000
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Don'#39't Know'
+            OnClick = btn3SamplesDontKnowClick
           end
         end
         object GroupBox4: TGroupBox
           Align = Top
-          Position.Y = 150.000000000000000000
+          StyledSettings = [Family, Size, FontColor, Other]
+          Position.Y = 210.000000000000000000
           Size.Width = 730.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Height = 70.000000000000000000
           Size.PlatformDefault = False
           Text = 'Parametric Data'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
           TabOrder = 3
-          object rdoParametric: TRadioButton
-            GroupName = 'GroupBox4'
-            Position.X = 8.000000000000000000
-            Position.Y = 24.000000000000000000
-            TabOrder = 3
+          object btnParametricYes: TSpeedButton
+            StaysPressed = True
+            Align = Left
+            GroupName = 'Parametric'
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
             Text = 'Yes'
-            OnClick = ParametricYes
+            OnClick = btnParametricYesClick
           end
-          object rdoNonParametric: TRadioButton
-            GroupName = 'GroupBox4'
-            Position.X = 139.000000000000000000
-            Position.Y = 23.000000000000000000
-            TabOrder = 2
+          object btnParametricNo: TSpeedButton
+            StaysPressed = True
+            Align = Center
+            GroupName = 'Parametric'
+            Size.Width = 112.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
             Text = 'No'
-            OnClick = ParametricNo
+            OnClick = btnParametricNoClick
           end
-          object rdoParametricDontKnow: TRadioButton
-            GroupName = 'GroupBox4'
-            IsChecked = True
-            Position.X = 270.000000000000000000
-            Position.Y = 23.000000000000000000
-            TabOrder = 0
-            Text = 'Don'#39't know'
-            OnClick = ParametricDontKnow
+          object btnParametricDontKnow: TSpeedButton
+            StaysPressed = True
+            Align = Right
+            GroupName = 'Parametric'
+            IsPressed = True
+            Position.X = 618.000000000000000000
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Don'#39't Know'
+            OnClick = btnParametricDontKnowClick
           end
         end
         object GroupBox5: TGroupBox
           Align = Top
-          Position.Y = 200.000000000000000000
+          StyledSettings = [Family, Size, FontColor, Other]
+          Position.Y = 280.000000000000000000
           Size.Width = 730.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Height = 70.000000000000000000
           Size.PlatformDefault = False
           Text = 'Covariates'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
           TabOrder = 4
-          object rdoCovariatesYes: TRadioButton
-            GroupName = 'GroupBox5'
-            Position.X = 8.000000000000000000
-            Position.Y = 24.000000000000000000
-            TabOrder = 3
+          object btnCovariatesYes: TSpeedButton
+            StaysPressed = True
+            Align = Left
+            GroupName = 'Covariates'
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
             Text = 'Yes'
-            OnClick = CovariatesYes
+            OnClick = btnCovariatesYesClick
           end
-          object rdoCovariatesNo: TRadioButton
-            GroupName = 'GroupBox5'
-            Position.X = 139.000000000000000000
-            Position.Y = 23.000000000000000000
-            TabOrder = 2
+          object btnCovariatesNo: TSpeedButton
+            StaysPressed = True
+            Align = Center
+            GroupName = 'Covariates'
+            Size.Width = 112.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
             Text = 'No'
-            OnClick = CovariatesNo
+            OnClick = btnCovariatesNoClick
           end
-          object rdoCovariatesDontKnow: TRadioButton
-            GroupName = 'GroupBox5'
-            IsChecked = True
-            Position.X = 270.000000000000000000
-            Position.Y = 15.000000000000000000
-            TabOrder = 0
-            Text = 'Don'#39't know'
-            OnClick = CovariatesDontKnow
+          object btnCovariatesDontKnow: TSpeedButton
+            StaysPressed = True
+            Align = Right
+            GroupName = 'Covariates'
+            IsPressed = True
+            Position.X = 618.000000000000000000
+            Size.Width = 112.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Don'#39't Know'
+            OnClick = btnCovariatesDontKnowClick
           end
         end
         object ListView1: TListView
@@ -228,10 +267,9 @@ object Form2: TForm2
           ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
           HeaderAppearanceClassName = 'TListHeaderObjects'
           FooterAppearanceClassName = 'TListHeaderObjects'
-          Align = Top
-          Position.Y = 250.000000000000000000
+          Align = Client
           Size.Width = 730.000000000000000000
-          Size.Height = 177.000000000000000000
+          Size.Height = 195.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 5
           OnChange = ListView1Change
@@ -243,12 +281,12 @@ object Form2: TForm2
         item
         end>
       IsSelected = False
-      Size.Width = 365.000000000000000000
+      Size.Width = 364.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'TabItem2'
+      Text = 'Learn More'
       ExplicitSize.cx = 365.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
       object WebBrowser1: TWebBrowser
