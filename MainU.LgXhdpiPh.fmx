@@ -11,7 +11,6 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
       450s
       646s)
     inherited TabItem1: TTabItem
-      Size.Width = 225.000000000000000000
       ExplicitSize.cx = 200.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
       inherited VertScrollBox1: TVertScrollBox
@@ -40,7 +39,6 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
       end
     end
     inherited TabItem2: TTabItem
-      Size.Width = 225.000000000000000000
       ExplicitSize.cx = 100.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
       inherited WebBrowser1: TWebBrowser
