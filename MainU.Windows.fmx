@@ -15,18 +15,48 @@ inherited Form2_Windows: TForm2_Windows
         Viewport.Height = 545.000000000000000000
         inherited GroupBox1: TGroupBox
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnContinuousYes: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
+          inherited btnContinuousDontKnow: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
         end
         inherited GroupBox2: TGroupBox
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnIndependent: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
+          inherited btnIndependentDontKnow: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
         end
         inherited GroupBox3: TGroupBox
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btn2SamplesYes: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
+          inherited btn2SamplesDontKnow: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
         end
         inherited GroupBox4: TGroupBox
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnParametricYes: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
+          inherited btnParametricDontKnow: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
         end
         inherited GroupBox5: TGroupBox
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnCovariatesYes: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
+          inherited btnCovariatesDontKnow: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
         end
       end
     end

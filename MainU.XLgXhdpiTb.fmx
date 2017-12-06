@@ -22,66 +22,36 @@ inherited Form2_XLgXhdpiTb: TForm2_XLgXhdpiTb
         inherited GroupBox1: TGroupBox
           Size.Width = 800.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          inherited btnContinuousYes: TSpeedButton
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
-          end
           inherited btnContinuousDontKnow: TSpeedButton
             Position.X = 688.000000000000000000
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
           end
         end
         inherited GroupBox2: TGroupBox
           Size.Width = 800.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          inherited btnIndependent: TSpeedButton
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
-          end
           inherited btnIndependentDontKnow: TSpeedButton
             Position.X = 688.000000000000000000
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
           end
         end
         inherited GroupBox3: TGroupBox
           Size.Width = 800.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          inherited btn2SamplesYes: TSpeedButton
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
-          end
           inherited btn2SamplesDontKnow: TSpeedButton
             Position.X = 688.000000000000000000
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
           end
         end
         inherited GroupBox4: TGroupBox
           Size.Width = 800.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          inherited btnParametricYes: TSpeedButton
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
-          end
           inherited btnParametricDontKnow: TSpeedButton
             Position.X = 688.000000000000000000
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
           end
         end
         inherited GroupBox5: TGroupBox
           Size.Width = 800.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          inherited btnCovariatesYes: TSpeedButton
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
-          end
           inherited btnCovariatesDontKnow: TSpeedButton
             Position.X = 688.000000000000000000
-            Position.Y = 11.000000000000000000
-            Size.Height = 48.000000000000000000
           end
         end
         inherited ListView1: TListView
