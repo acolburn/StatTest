@@ -110,7 +110,7 @@ object Form2: TForm2
             Size.Width = 112.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            Text = 'Yes'
+            Text = 'Independent'
             OnClick = btnIndependentClick
           end
           object btnDependent: TSpeedButton
@@ -120,7 +120,7 @@ object Form2: TForm2
             Size.Width = 112.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            Text = 'No'
+            Text = 'Dependent'
             OnClick = btnDependentClick
           end
           object btnIndependentDontKnow: TSpeedButton
