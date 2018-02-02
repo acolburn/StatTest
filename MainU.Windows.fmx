@@ -1,72 +1,72 @@
-inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
-  ClientHeight = 695
-  ClientWidth = 450
-  DesignerMasterStyle = 3
+inherited Form2_Windows: TForm2_Windows
+  DesignerMasterStyle = 0
   inherited TabControl1: TTabControl
-    Size.Width = 450.000000000000000000
-    Size.Height = 695.000000000000000000
     Sizes = (
-      450s
-      646s
-      450s
-      646s)
+      730s
+      545s
+      730s
+      545s)
     inherited TabItem1: TTabItem
-      ExplicitSize.cx = 200.000000000000000000
+      Size.Width = 84.000000000000000000
+      ExplicitSize.cx = 365.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
       inherited VertScrollBox1: TVertScrollBox
-        Size.Width = 450.000000000000000000
-        Size.Height = 646.000000000000000000
-        Viewport.Width = 450.000000000000000000
-        Viewport.Height = 646.000000000000000000
+        Viewport.Width = 730.000000000000000000
+        Viewport.Height = 545.000000000000000000
         inherited GroupBox1: TGroupBox
-          Size.Width = 450.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnContinuousYes: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
           inherited btnContinuousDontKnow: TSpeedButton
-            Position.X = 338.000000000000000000
+            Size.Height = 70.000000000000000000
           end
         end
         inherited GroupBox2: TGroupBox
-          Size.Width = 450.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnIndependent: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
           inherited btnIndependentDontKnow: TSpeedButton
-            Position.X = 338.000000000000000000
+            Size.Height = 70.000000000000000000
           end
         end
         inherited GroupBox3: TGroupBox
-          Size.Width = 450.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btn2SamplesYes: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
           inherited btn2SamplesDontKnow: TSpeedButton
-            Position.X = 338.000000000000000000
+            Size.Height = 70.000000000000000000
           end
         end
         inherited GroupBox4: TGroupBox
-          Size.Width = 450.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnParametricYes: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
           inherited btnParametricDontKnow: TSpeedButton
-            Position.X = 338.000000000000000000
+            Size.Height = 70.000000000000000000
           end
         end
         inherited GroupBox5: TGroupBox
-          Size.Width = 450.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          inherited btnCovariatesDontKnow: TSpeedButton
-            Position.X = 338.000000000000000000
+          inherited btnCovariatesYes: TSpeedButton
+            Size.Height = 70.000000000000000000
           end
-        end
-        inherited ListView1: TListView
-          Size.Width = 450.000000000000000000
-          Size.Height = 296.000000000000000000
+          inherited btnCovariatesDontKnow: TSpeedButton
+            Size.Height = 70.000000000000000000
+          end
         end
       end
     end
     inherited TabItem2: TTabItem
-      ExplicitSize.cx = 100.000000000000000000
+      Size.Width = 81.000000000000000000
+      ExplicitSize.cx = 365.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
       inherited WebBrowser1: TWebBrowser
         Touch.GestureManager = GestureManager1
         OnGesture = WebBrowser1Gesture
-        Size.Width = 450.000000000000000000
-        Size.Height = 646.000000000000000000
       end
     end
   end
@@ -81,6 +81,9 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
         Collection = <
           item
             GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
           end>
       end>
   end

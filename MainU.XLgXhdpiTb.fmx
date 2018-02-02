@@ -20,21 +20,42 @@ inherited Form2_XLgXhdpiTb: TForm2_XLgXhdpiTb
         Viewport.Height = 1206.000000000000000000
         inherited GroupBox1: TGroupBox
           Size.Width = 800.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnContinuousDontKnow: TSpeedButton
+            Position.X = 688.000000000000000000
+          end
         end
         inherited GroupBox2: TGroupBox
           Size.Width = 800.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnIndependentDontKnow: TSpeedButton
+            Position.X = 688.000000000000000000
+          end
         end
         inherited GroupBox3: TGroupBox
           Size.Width = 800.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btn2SamplesDontKnow: TSpeedButton
+            Position.X = 688.000000000000000000
+          end
         end
         inherited GroupBox4: TGroupBox
           Size.Width = 800.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnParametricDontKnow: TSpeedButton
+            Position.X = 688.000000000000000000
+          end
         end
         inherited GroupBox5: TGroupBox
           Size.Width = 800.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited btnCovariatesDontKnow: TSpeedButton
+            Position.X = 688.000000000000000000
+          end
         end
         inherited ListView1: TListView
           Size.Width = 800.000000000000000000
+          Size.Height = 856.000000000000000000
         end
       end
     end

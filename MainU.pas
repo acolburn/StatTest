@@ -26,21 +26,6 @@ type
     GroupBox3: TGroupBox;
     GroupBox4: TGroupBox;
     GroupBox5: TGroupBox;
-    rdoContinuousYes: TRadioButton;
-    rdoContinuousNo: TRadioButton;
-    rdoIndependent: TRadioButton;
-    rdoDependent: TRadioButton;
-    rdo2Samples: TRadioButton;
-    rdo3Samples: TRadioButton;
-    rdoParametric: TRadioButton;
-    rdoNonParametric: TRadioButton;
-    rdoCovariatesYes: TRadioButton;
-    rdoCovariatesNo: TRadioButton;
-    rdoContinuousDontKnow: TRadioButton;
-    rdoIndependentDontKnow: TRadioButton;
-    rdo2SamplesDontKnow: TRadioButton;
-    rdoParametricDontKnow: TRadioButton;
-    rdoCovariatesDontKnow: TRadioButton;
     WebBrowser1: TWebBrowser;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
@@ -49,6 +34,25 @@ type
     TabControl1: TTabControl;
     TabItem1: TTabItem;
     TabItem2: TTabItem;
+<<<<<<< HEAD
+=======
+    GestureManager1: TGestureManager;
+    btnContinuousYes: TSpeedButton;
+    btnContinuousNo: TSpeedButton;
+    btnContinuousDontKnow: TSpeedButton;
+    btnIndependent: TSpeedButton;
+    btnDependent: TSpeedButton;
+    btnIndependentDontKnow: TSpeedButton;
+    btn2SamplesYes: TSpeedButton;
+    btn2SamplesNo: TSpeedButton;
+    btn2SamplesDontKnow: TSpeedButton;
+    btnParametricYes: TSpeedButton;
+    btnParametricNo: TSpeedButton;
+    btnParametricDontKnow: TSpeedButton;
+    btnCovariatesYes: TSpeedButton;
+    btnCovariatesNo: TSpeedButton;
+    btnCovariatesDontKnow: TSpeedButton;
+>>>>>>> main
     procedure FormCreate(Sender: TObject);
     procedure ContinuousYes(Sender: TObject);
     procedure ContinuousNo(Sender: TObject);
@@ -68,6 +72,24 @@ type
     procedure ListView1Change(Sender: TObject);
     procedure WebBrowser1Gesture(Sender: TObject;
       const EventInfo: TGestureEventInfo; var Handled: Boolean);
+<<<<<<< HEAD
+=======
+    procedure btnContinuousYesClick(Sender: TObject);
+    procedure btnContinuousNoClick(Sender: TObject);
+    procedure btnContinuousDontKnowClick(Sender: TObject);
+    procedure btnIndependentClick(Sender: TObject);
+    procedure btnDependentClick(Sender: TObject);
+    procedure btnIndependentDontKnowClick(Sender: TObject);
+    procedure btn3SamplesNoClick(Sender: TObject);
+    procedure btn3SamplesYesClick(Sender: TObject);
+    procedure btn3SamplesDontKnowClick(Sender: TObject);
+    procedure btnParametricYesClick(Sender: TObject);
+    procedure btnParametricNoClick(Sender: TObject);
+    procedure btnParametricDontKnowClick(Sender: TObject);
+    procedure btnCovariatesYesClick(Sender: TObject);
+    procedure btnCovariatesNoClick(Sender: TObject);
+    procedure btnCovariatesDontKnowClick(Sender: TObject);
+>>>>>>> main
 //    procedure StringGrid1SelectCell(Sender: TObject; const ACol, ARow: Integer;
 //      var CanSelect: Boolean);
 //    procedure ListBox1Change(Sender: TObject);
@@ -222,6 +244,7 @@ end;
 procedure TForm2.FormCreate(Sender: TObject);
 begin
 //  StringColumn1.Width := StringGrid1.Width;
+  TabControl1.ActiveTab:=TabItem1;
   UpdateDisplay;
 end;
 
@@ -229,6 +252,96 @@ end;
 procedure TForm2.TwoSamplesDontKnow(Sender: TObject);
 begin
   TestHandler.ThreeSamples(dunno);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btn3SamplesDontKnowClick(Sender: TObject);
+begin
+TestHandler.ThreeSamples(dunno);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btn3SamplesYesClick(Sender: TObject);
+begin
+TestHandler.ThreeSamples(yes);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btn3SamplesNoClick(Sender: TObject);
+begin
+  TestHandler.ThreeSamples(no);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnContinuousDontKnowClick(Sender: TObject);
+begin
+TestHandler.ContinuousData(dunno);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnContinuousNoClick(Sender: TObject);
+begin
+TestHandler.ContinuousData(no);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnContinuousYesClick(Sender: TObject);
+begin
+  TestHandler.ContinuousData(yes);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnCovariatesDontKnowClick(Sender: TObject);
+begin
+TestHandler.Covariates(dunno);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnCovariatesNoClick(Sender: TObject);
+begin
+TestHandler.Covariates(no);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnCovariatesYesClick(Sender: TObject);
+begin
+  TestHandler.Covariates(yes);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnDependentClick(Sender: TObject);
+begin
+TestHandler.IndependentSamples(no);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnIndependentClick(Sender: TObject);
+begin
+  TestHandler.IndependentSamples(yes);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnIndependentDontKnowClick(Sender: TObject);
+begin
+TestHandler.IndependentSamples(dunno);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnParametricDontKnowClick(Sender: TObject);
+begin
+TestHandler.Parametric(dunno);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnParametricNoClick(Sender: TObject);
+begin
+TestHandler.Parametric(no);
+  UpdateDisplay;
+end;
+
+procedure TForm2.btnParametricYesClick(Sender: TObject);
+begin
+   TestHandler.Parametric(yes);
   UpdateDisplay;
 end;
 

@@ -7,7 +7,15 @@
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
+<<<<<<< HEAD
         <TargetedPlatforms>1</TargetedPlatforms>
+=======
+<<<<<<< HEAD
+        <TargetedPlatforms>23</TargetedPlatforms>
+=======
+        <TargetedPlatforms>21</TargetedPlatforms>
+>>>>>>> 89cbe87970bdc9e1005590a11e85acdc815e93e9
+>>>>>>> main
         <AppType>Application</AppType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
@@ -19,16 +27,37 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+<<<<<<< HEAD
+=======
         <Cfg_1>true</Cfg_1>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Cfg_1)'=='true') or '$(Cfg_1_OSX32)'!=''">
+        <Cfg_1_OSX32>true</Cfg_1_OSX32>
+<<<<<<< HEAD
+        <CfgParent>Cfg_1</CfgParent>
+>>>>>>> main
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+=======
+>>>>>>> 89cbe87970bdc9e1005590a11e85acdc815e93e9
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+<<<<<<< HEAD
+=======
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
         <Cfg_1_Win32>true</Cfg_1_Win32>
         <CfgParent>Cfg_1</CfgParent>
         <Cfg_1>true</Cfg_1>
         <Base>true</Base>
     </PropertyGroup>
+>>>>>>> main
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
@@ -82,6 +111,9 @@
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_OSX32)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <AppEnableHighDPI>true</AppEnableHighDPI>
@@ -216,15 +248,40 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                <DeployFile LocalName="Android\Debug\classes.dex" Configuration="Debug" Class="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteName>classes.dex</RemoteName>
+=======
+                <DeployFile LocalName="Android\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
+                    <Platform Name="Android">
+>>>>>>> 89cbe87970bdc9e1005590a11e85acdc815e93e9
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+>>>>>>> main
                 <DeployFile LocalName="Win32\Debug\Stats.db" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+<<<<<<< HEAD
                 <DeployFile LocalName="Android\Debug\libStatTest.so" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Android">
                         <RemoteName>libStatTest.so</RemoteName>
+=======
+<<<<<<< HEAD
+                <DeployFile LocalName="Android\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
+                    <Platform Name="Android">
+=======
+                <DeployFile LocalName="Android\Debug\libStatTest.so" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteName>libStatTest.so</RemoteName>
+>>>>>>> 89cbe87970bdc9e1005590a11e85acdc815e93e9
+>>>>>>> main
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -233,8 +290,20 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+<<<<<<< HEAD
                 <DeployFile LocalName="Android\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
                     <Platform Name="Android">
+=======
+<<<<<<< HEAD
+                <DeployFile LocalName="Android\Debug\libStatTest.so" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteName>libStatTest.so</RemoteName>
+=======
+                <DeployFile LocalName="Win32\Debug\Stats.db" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+>>>>>>> 89cbe87970bdc9e1005590a11e85acdc815e93e9
+>>>>>>> main
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -699,7 +768,17 @@
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
+<<<<<<< HEAD
                 <Platform value="Win32">True</Platform>
+=======
+                <Platform value="Android">True</Platform>
+                <Platform value="OSX32">True</Platform>
+                <Platform value="Win32">True</Platform>
+<<<<<<< HEAD
+                <Platform value="Win64">True</Platform>
+=======
+>>>>>>> 89cbe87970bdc9e1005590a11e85acdc815e93e9
+>>>>>>> main
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
@@ -707,4 +786,5 @@
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <ProjectExtensions/>
 </Project>
