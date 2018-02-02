@@ -5,9 +5,7 @@ object DataModule1: TDataModule1
   Width = 539
   object FDConnection1: TFDConnection
     Params.Strings = (
-      
-        'Database=C:\Users\Alan\Documents\Code\StatTest\Win32\Debug\Stats' +
-        '.db'
+      'Database=C:\Code\StatTest\Win32\Debug\Stats.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
     LoginPrompt = False
